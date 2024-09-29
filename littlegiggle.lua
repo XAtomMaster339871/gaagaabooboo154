@@ -75,11 +75,11 @@ end)
 api.Connections.MonsterCheckNode = workspace.ChildAdded:Connect(function(c)
 	local data = {}
 	if c.Name:match('RushMoving') then
-		data[1] = (c:GetPivot().Position)-services.localPlr.Character.PrimaryPart.Position
+		data[1] = ((c:GetPivot().Position)-services.localPlr.Character.PrimaryPart.Position).Magnitude
 		data[2] = c
 		data[3] = "Rush"
 	elseif c.Name:match('AmbushMoving') then
-		data[1] = (c:GetPivot().Position)-services.localPlr.Character.PrimaryPart.Position
+		data[1] = ((c:GetPivot().Position)-services.localPlr.Character.PrimaryPart.Position).Magnitude
 		data[2] = c
 		data[3] = "Ambush"
 	end
